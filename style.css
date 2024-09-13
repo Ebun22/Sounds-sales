@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One:ital@0;1&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Lobster&family=Mochiy+Pop+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Nosifer&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+
+.poppins {
+  font-family: "Poppins";
+}
+:root {
+  --item1-transform: translateX(-100%) translateY(-5%) scale(1.5);
+  --item1-filter: blur(30px);
+  --item1-zIndex: 11;
+  --item1-opacity: 0;
+
+  --item2-transform: translateX(0);
+  --item2-filter: blur(0px);
+  --item2-zIndex: 10;
+  --item2-opacity: 1;
+
+  --item3-transform: translate(50%, 10%) scale(0.8);
+  --item3-filter: blur(10px);
+  --item3-zIndex: 9;
+  --item3-opacity: 1;
+
+  --item4-transform: translate(90%, 20%) scale(0.5);
+  --item4-filter: blur(30px);
+  --item4-zIndex: 8;
+  --item4-opacity: 1;
+
+  --item5-transform: translate(120%, 30%) scale(0.3);
+  --item5-filter: blur(40px);
+  --item5-zIndex: 7;
+  --item5-opacity: 0;
+}
+.carousel .list .item {
+  position: absolute;
+  left: 0%;
+  width: 70%;
+  height: 100%;
+  font-size: 15px;
+  transition: left 0.5s, opacity 0.5s, width 0.5s;
+}
+.carousel .list .item:nth-child(n + 6) {
+  opacity: 0;
+}
+.carousel .list .item:nth-child(2) {
+  z-index: 10;
+  transform: translateX(0);
+}
+.carousel .list .item .intro:nth-child(2) {
+  opacity: 1;
+  pointer-events: auto;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.5s;
+}
+.carousel .list .item:nth-child(1) .intro,
+.carousel .list .item:nth-child(3) .intro,
+.carousel .list .item:nth-child(4) .intro,
+.carousel .list .item:nth-child(5) .intro {
+  opacity: 0;
+}
+.carousel .list .item:nth-child(2) .intro .title,
+.carousel .list .item:nth-child(2) .intro .topic,
+.carousel .list .item:nth-child(2) .intro .desc,
+.carousel .list .item:nth-child(2) .intro .seemore {
+  opacity: 0;
+  animation: showContent 0.8s 0.8s ease-in-out 1 forwards;
+}
+@keyframes showContent {
+  from {
+    transform: translateY(50%);
+    filter: blur(30px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+.carousel .list .item:nth-child(2) .intro .title {
+  animation-delay: 0.8s;
+}
+.carousel .list .item:nth-child(2) .intro .topic {
+  animation-delay: 1s;
+}
+.carousel .list .item:nth-child(2) .intro .desc {
+  animation-delay: 1.2s;
+}
+.carousel .list .item:nth-child(2) .intro .seemore {
+  animation-delay: 1.4s;
+}
+.carousel .list .item:nth-child(1) {
+  transform: var(--item1-transform);
+  filter: var(--item1-filter);
+  z-index: var(--item1-zIndex);
+  opacity: var(--item1-opacity);
+  pointer-events: none;
+}
+.carousel .list .item:nth-child(3) {
+  transform: var(--item3-transform);
+  filter: var(--item3-filter);
+  z-index: var(--item3-zIndex);
+}
+.carousel .list .item:nth-child(4) {
+  transform: var(--item4-transform);
+  filter: var(--item4-filter);
+  z-index: var(--item4-zIndex);
+}
+.carousel .list .item:nth-child(5) {
+  transform: var(--item5-transform);
+  filter: var(--item5-filter);
+  opacity: var(--item5-opacity);
+  pointer-events: none;
+}
+/* next click */
+.carousel.next .item:nth-child(1) {
+  animation: position2 0.5s ease-in-out 1 forwards;
+}
+@keyframes position2 {
+  from {
+    transform: var(--item2-transform);
+    filter: var(--item2-filter);
+    opacity: var(--item2-opacity);
+  }
+}
+
+.carousel.next .item:nth-child(2) {
+  animation: position3 0.7s ease-in-out 1 forwards;
+}
+@keyframes position3 {
+  from {
+    transform: var(--item3-transform);
+    filter: var(--item3-filter);
+    opacity: var(--item3-opacity);
+  }
+}
+
+.carousel.next .item:nth-child(3) {
+  animation: position4 0.9s ease-in-out 1 forwards;
+}
+@keyframes position4 {
+  from {
+    transform: var(--item4-transform);
+    filter: var(--item4-filter);
+    opacity: var(--item4-opacity);
+  }
+}
+
+.carousel.next .item:nth-child(4) {
+  animation: position5 1.1s ease-in-out 1 forwards;
+}
+@keyframes position5 {
+  from {
+    transform: var(--item5-transform);
+    filter: var(--item5-filter);
+    opacity: var(--item5-opacity);
+  }
+}
+
+/* previous */
+.carousel.prev .list .item:nth-child(2) {
+  animation: position1 1.1s ease-in-out 1 forwards;
+}
+@keyframes position1 {
+  from {
+    transform: var(--item1-transform);
+    filter: var(--item1-filter);
+    opacity: var(--item1-opacity);
+  }
+}
+.carousel.prev .list .item:nth-child(3) {
+  animation: position2 0.9s ease-in-out 1 forwards;
+}
+
+.carousel.prev .list .item:nth-child(4) {
+  animation: position3 0.7s ease-in-out 1 forwards;
+}
+
+.carousel.prev .list .item:nth-child(5) {
+  animation: position4 0.5s ease-in-out 1 forwards;
+}
+
+.carousel::before {
+  content: "";
+  background-image: linear-gradient(70deg, #dc422a, blue);
+  position: absolute;
+  filter: blur(70px);
+  width: 500px;
+  height: 350px;
+  border-radius: 20% 30% 80% 10%;
+  left: 50%;
+  transform: translate(-40%, 20%);
+  top: 7%;
+}
+
+.carousel.details .list .item:nth-child(3),
+.carousel.details .list .item:nth-child(4),
+.carousel.details .list .item .intro,
+.carousel.details .arrows .prev,
+.carousel.details .arrows .next {
+  opacity: 0;
+  left: 100%;
+  pointer-events: none;
+  transition: left 0.2s 0.1s, opacity 0.3s 0.2s ease-in-out;
+}
+
+.carousel.details .list .item:nth-child(2) {
+  width: 100%;
+  animation: position3 0.9s ease-in-out 1 forwards;
+}
+.carousel.details .list .item:nth-child(2) img {
+  left: 0px;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 60%;
+}
+.carousel.details .list .item:nth-child(2) .details {
+  opacity: 0;
+  width: 50%;
+  position: absolute;
+  top: 28%;
+  right: 0;
+  animation: showContent 0.8s 0.8s ease-in-out 1 forwards;
+}
+.carousel.details .list .item:nth-child(2) .details .title {
+  animation-delay: 0.8s;
+  font-size: 2em;
+}
+.carousel.details .list .item:nth-child(2) .details .topic {
+  animation-delay: 1s;
+  font-size: 4em;
+  line-height: 1em;
+  padding: 20px 0px;
+}
+.carousel.details .list .item:nth-child(2) .details .desc {
+  animation-delay: 1.2s;
+  font-weight: lighter;
+  text-align: justify;
+  padding-bottom: 15px;
+}
+.carousel.details .list .item:nth-child(2) .details .spec {
+  animation-delay: 1.4s;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.carousel.details .list .item:nth-child(2) .details .spec div > p {
+  font-weight: bold;
+}
+.carousel.details .list .item:nth-child(2) .details .spec div:nth-child(2) {
+  font-weight: lighter;
+  color: #11101099;
+}
