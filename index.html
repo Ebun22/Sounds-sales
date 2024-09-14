@@ -8,6 +8,23 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- Loader -->
+     <div class="bg">
+         <div class="container flex justify-center items-center overflow-hidden">
+            <div class="circles absolute">
+                <div class="circle absolute w-[300px] h-[300px] top-[50%] left-[50%] c1"></div>
+                <div class="circle  absolute w-[300px] h-[300px] top-[50%] left-[50%] c2"></div>
+                <div class="circle absolute w-[300px] h-[300px] top-[50%] left-[50%] c3"></div>
+                <div class="circle absolute w-[300px] h-[300px] top-[50%] left-[50%] c4"></div>
+            </div>
+            <div class="loading">
+                <div class="a"></div>
+                <div class="b"></div>
+                <div class="c"></div>
+                <div class="d"></div> 
+            </div>
+         </div>
+     </div>
     <!-- HEADER -->
     <header
       class="flex justify-between w-[1140px] max-w-[90%] items-center h-[50px] mx-auto"
@@ -181,7 +198,7 @@
           <div class="details pointer-events-none opacity-0">
             <p class="title">BANG & OLUFSEN</p>
             <p class="topic">Earpods</p>
-            <p class="desc pointer-events-none opacity-0">
+            <p class="desc">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -282,7 +299,7 @@
         >
           <img
             alt="pods"
-            class="w-[300px] h-[430px] absolute right-0 top-[50%] translate-y-[-42%]"
+            class="w-[300px] h-[430px] absolute right-0 top-[50%] lg:translate-y-[-42%] translate-y-[-19%]"
             src="./images/img5.png"
           />
           <div
@@ -305,8 +322,8 @@
             </button>
           </div>
           <div class="details pointer-events-none opacity-0">
-            <p class="title">BANG & OLUFSEN</p>
-            <p class="topic">Earpods</p>
+            <p class="title">APPLE IOS</p>
+            <p class="topic">Airpods</p>
             <p class="desc">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -404,7 +421,7 @@
           </div>
         </div>
       </div>
-      <div class="arrows absolute bottom-[20px] w-[1140px] max-x-[90%] flex justify-between left-[50%] translate-x-[-50%]">
+      <div class="arrows absolute bottom-[20px] lg:w-[1140px] w-full lg:max-x-[90%] flex justify-between mx-auto left-[50%] translate-x-[-50%]">
         <button class="next w-[40px] h-[40px] rounded-full border border-[#5555] text-3xl bottom-[20%] p-[-10px] left-[]">&#8592;</button>
         <button class="back absolute z-30 bottom-[0%] left-[50%] font-bold">Go Back &#8599</button>
         <button  class="prev w-[40px] h-[40px] rounded-full border border-[#5555] text-3xl bottom-[20%] p-[-10px] left-unset">&#8594;</button>

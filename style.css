@@ -3,6 +3,12 @@
 .poppins {
   font-family: "Poppins";
 }
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
 :root {
   --item1-transform: translateX(-100%) translateY(-5%) scale(1.5);
   --item1-filter: blur(30px);
@@ -182,9 +188,9 @@
 
 .carousel::before {
   content: "";
-  background-image: linear-gradient(70deg, #dc422a, blue);
+  background-image: linear-gradient(45deg, #dc422a, blue);
   position: absolute;
-  filter: blur(70px);
+  filter: blur(150px);
   width: 500px;
   height: 350px;
   border-radius: 20% 30% 80% 10%;
@@ -203,7 +209,14 @@
   pointer-events: none;
   transition: left 0.2s 0.1s, opacity 0.3s 0.2s ease-in-out;
 }
-
+.carousel .arrows .back{
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel.details .arrows .back{
+    opacity: 0;
+    pointer-events: none;
+}
 .carousel.details .list .item:nth-child(2) {
   width: 100%;
   animation: position3 0.9s ease-in-out 1 forwards;
@@ -245,10 +258,196 @@
   flex-direction: row;
   gap: 10px;
 }
-.carousel.details .list .item:nth-child(2) .details .spec div > p {
+.carousel.details .list .item:nth-child(2) .details .spec div p:first-child  {
   font-weight: bold;
 }
-.carousel.details .list .item:nth-child(2) .details .spec div:nth-child(2) {
+.carousel.details .list .item:nth-child(2) .details .spec div p:nth-child(2) {
   font-weight: lighter;
   color: #11101099;
+}
+
+@media screen and (max-width: 991px){
+    /* ipad, tablets */
+    .carousel .list .item{
+        width: 100%;
+    }
+    .carousel .list .item:nth-child(2) img{
+       width: 300px;
+    }
+    .carousel.details .list .item:nth-child(2) .details .spec div p:first-child  {
+        font-weight: bold;
+        font-size: 11px;
+      }
+      .carousel.details .list .item:nth-child(2) .details .spec div p:nth-child(2) {
+        font-weight: thin;
+        color: #11101099;
+        font-size: 11px;
+        text-align: center;
+      }
+    .carousel::before{
+        left: 65%;
+        top: 24%;
+        width: 300px
+    }
+    .carousel.details::before{
+        left: 25%;
+        top: 18%;
+        width: 200px;
+        font-size: small;
+    }
+    .carousel.details .list .item:nth-child(2) img{
+        width: 300px;
+        height: 300px;
+        top: 48%;
+    }
+}
+@media screen and (max-width: 767px){
+    /* mobile */
+    .carousel .list .item .intro:nth-child(2) {
+        width: 300px;
+        transform: translateY(-85%);
+    }
+    .carousel .list .item:nth-child(2) img{
+        transform: translateY(19%);
+    }
+    .carousel .list .item:nth-child(1) {
+      
+        transition: transform 0.4s ease-in-out;
+      }
+}
+
+/* loader */
+.container{
+    position:relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-size: 200% 200%;
+    animation: gradientFlow 0.5s ease infinite;
+    background: linear-gradient(
+        to bottom right, 
+        rgba(255, 105, 180, 0.5), /* Light pinkish-red with transparency */
+        rgba(100, 149, 237, 0.5)  /* Light blue with transparency */
+      );
+      backdrop-filter: blur(10px); /* Applies the blur effect */
+      -webkit-backdrop-filter: blur(10px); /
+}
+
+@keyframes gradientFlow {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  .bg{
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 90;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.9s ease;
+  }
+  
+  .bg.remove-loader{
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+.container .circles{
+
+    animation: rotate 2s linear infinite;
+    background: red;
+}
+/* @keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+} */
+.container .circles .circle{
+ display: none;
+    border-radius: 50%;
+}
+.container .circles .c1{
+    transform: translate(-50%, -50%) rotate(120deg);
+    border-right: 10px solid  #6f2a85
+}
+.container .circles .c2{
+    transform: translate(-50%, -50%) rotate(180deg);
+    border-right: 10px solid #7f3396
+}
+.container .circles .c3{
+    transform: translate(-50%, -50%) rotate(240deg);
+    border-right: 10px solid#8f44a7
+}
+.container .circles .c4{
+    transform: translate(-50%, -50%) rotate(300deg);
+    border-right: 10px solid #9f55b8
+}
+.container .loading{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.container .loading div{
+    width: 8px;
+    height: 80px;
+    margin: 5px;
+    border-radius: 50px;
+}
+.a{
+    background-image:  linear-gradient(45deg, #dc422a, blue);
+    animation: animate 2s infinite ease-in-out;
+    animation-delay: .25s;
+}
+.b{
+    background-image: linear-gradient(45deg, #dc422a, blue);
+    animation: animate 2s infinite ease-in-out;
+    animation-delay: .5s;
+}
+.c{
+    background-image: linear-gradient(45deg, #dc422a, blue);
+    animation: animate 2s infinite ease-in-out;
+    animation-delay: .75s;
+}
+.d{
+    background-image: linear-gradient(45deg, #dc422a, blue);
+    animation: animate 2s infinite ease-in-out;
+    animation-delay: 1s;
+}
+@keyframes animate{
+    0%{
+        height: 80px;
+    }20%{
+        height: 40px;
+    }
+    40%{
+        height: 50px;
+    }
+    60%{
+        height: 75px;
+    }
+    80%{
+        height: 30px;
+    }
+    100%{
+        height: 80px;
+    }
 }

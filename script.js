@@ -75,3 +75,10 @@ backBtn.onclick = () => {
     carousel.classList.remove('details')
     resumeAutoSlider()
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(() => {
+        const bg = document.querySelector('.bg');
+        bg.classList.add("remove-loader")
+    }, 2000)
+})
