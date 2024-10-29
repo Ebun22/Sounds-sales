@@ -198,6 +198,18 @@ body{
   transform: translate(-40%, 20%);
   top: 7%;
 }
+.contacts::after {
+  content: "";
+  background-image: linear-gradient(45deg, #dc422a, blue);
+  position: absolute;
+  filter: blur(150px);
+  width: 400px;
+  height: 250px;
+  border-radius: 20% 30% 80% 10%;
+  left: 80%;
+  transform: translate(-40%, 20%);
+  top: 20%;
+}
 
 .carousel.details .list .item:nth-child(3),
 .carousel.details .list .item:nth-child(4),

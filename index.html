@@ -29,8 +29,8 @@
     <header
       class="flex justify-between w-[1140px] max-w-[90%] items-center h-[50px] mx-auto"
     >
-      <div class="font-bold text-3xl poppins relative z-10">SUBEY</div>
-      <nav class="flex items-center gap-10">
+      <div class="font-bold text-3xl poppins relative z-10">SOUNDz</div>
+      <nav class="flex items-center gap-10 z-[1000]">
         <a class="" href="#home">Home</a>
         <a class="" href="#contact">Contact</a>
         <a class="" href="#info">Info</a>
@@ -38,7 +38,7 @@
     </header>
 
     <!-- Carousel -->
-    <div class="carousel mt-[-50px] h-screen overflow-hidden relative">
+    <div class="carousel mt-[-50px] h-screen overflow-x-hidden relative">
       <div
         class="list absolute top-0 left-[50%] translate-x-[-50%] w-[1140px] max-w-[90%] h-[80%]"
       >
@@ -427,6 +427,31 @@
         <button  class="prev w-[40px] h-[40px] rounded-full border border-[#5555] text-3xl bottom-[20%] p-[-10px] left-unset">&#8594;</button>
       </div>
     </div>
+
+    <!-- contacts -->
+     <div id="contact" class="contacts w-full h-screen bg-[#f9f0f2] backdrop-blur-md flex justify-center items-center py-6">
+      <div class="w-[30vw] ">
+        <h1 class="font-bold text-[3vw] relative left-[-10%]  pb-4">Talk To Us!</h1>
+        <div class="flex flex-col w-full justify-center items-center mt-6">
+          <input type="text" placeholder="Name" class="w-full rounded-lg bg-transparent p-3 focus:outline-none border border-[#000] " />
+        </div>
+        <div class="flex flex-col w-full justify-center items-center mt-6">
+          <input type="text" placeholder="Email" class="w-full rounded-lg bg-transparent p-3 focus:outline-none border border-[#000] " />
+        </div>
+        <div class="flex flex-col w-full justify-center items-center mt-6">
+          <textarea name="message" placeholder="Enter your message here" class="w-full rounded-lg bg-transparent p-3 focus:outline-none border border-[#000] " > </textarea>
+        </div>
+     
+          <button class="text-center p-3 rounded-xl bg-[#000] w-full text-[#fff] mt-6">Send</button>
+  
+      </div>
+     </div>
+
+    <!-- footer-->
+     <div class="w-full bg-[#000] flex flex-col justify-center items-center text-[#fff]">
+         <p class="text-[#f5f5f5] py-6">© 2024 Beats by Soundz All rights reserved</p>
+         <p class="text-[#f5f5f5] text-xs font-light">Made with ❤️ by <a href="">Subey</a></p>
+     </div>
     <script src="./script.js"></script>
   </body>
 </html>
