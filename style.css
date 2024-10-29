@@ -315,6 +315,9 @@ body{
 }
 @media screen and (max-width: 767px){
     /* mobile */
+    .contacts::after{
+      transform: translate(-100%, 130%)
+    }
     .carousel .list .item .intro:nth-child(2) {
         width: 300px;
         transform: translateY(-85%);
